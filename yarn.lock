@@ -138,6 +138,15 @@
   dependencies:
     tslib "^2.2.0"
 
+"@angular/cdk@12.2.3":
+  version "12.2.3"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-12.2.3.tgz#1b454e8a406e51a704e1cfd762cdc31d9c2c3cef"
+  integrity sha512-ahY3k5X3eoQlsCX/fYiwbe1z7nfmwY15EiLpcJ8YrnUoB+ZshPm8qFIZi6gwY4tsMmUN8OfsIGcUO701bdxFpg==
+  dependencies:
+    tslib "^2.2.0"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
 "@angular/cli@~12.2.2":
   version "12.2.2"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-12.2.2.tgz#8900cf22e946a9be667044ba13856e9b065f85a5"
@@ -6232,6 +6241,11 @@ parse5-sax-parser@^6.0.1:
   dependencies:
     parse5 "^6.0.1"
 
+parse5@^5.0.0:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-5.1.1.tgz#f68e4e5ba1852ac2cadc00f4555fff6c2abb6178"
+  integrity sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==
+
 parse5@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-6.0.1.tgz#e1a1c085c569b3dc08321184f19a39cc27f7c30b"
@@ -6966,12 +6980,12 @@ primeicons@^5.0.0:
   resolved "https://registry.yarnpkg.com/primeicons/-/primeicons-5.0.0.tgz#73a0b6028a77c58a9eeb331ad13aaf085e8451ee"
   integrity sha512-heygWF0X5HFI1otlZE62pp6ye7sZ8om78J9au2BRkg8O7Y8AHTZ9qKMRzchZUHLe8zUAvdi6hZzzm9XxgwIExw==
 
-primeng@^13.2.0:
-  version "13.2.0"
-  resolved "https://registry.yarnpkg.com/primeng/-/primeng-13.2.0.tgz#cbcc7fbc55b1479435e978c5156228e6e853c278"
-  integrity sha512-6rnjfXu91B1bVAFoJdbGTD7e3EXeTabPLvAJlVOg7/YFPbvzvOKjdFKa+8zomSun7TJgDLJTEa1ijgjc9b+uiA==
+primeng@12.2.3:
+  version "12.2.3"
+  resolved "https://registry.yarnpkg.com/primeng/-/primeng-12.2.3.tgz#38778a59a77d67a4ac7211d9e921ba72577ebcee"
+  integrity sha512-O6NrFpdr8fPyD+8y85zGiBj5vacD2JZuBA2D6UpFav/8hx1OHX4hJYPGSZDyiAXn8v3lQjVD72ekIqox70II4A==
   dependencies:
-    tslib "^2.3.0"
+    tslib "^2.1.0"
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
@@ -8335,7 +8349,7 @@ tslib@^2.0.0, tslib@~2.1.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
   integrity sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
 
-tslib@^2.2.0, tslib@^2.3.0:
+tslib@^2.1.0, tslib@^2.2.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
