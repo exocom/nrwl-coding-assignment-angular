@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { TicketPageRoutingModule } from './ticket-page-routing.module';
 import { TicketPageComponent } from './ticket-page.component';
+import { ToggleButtonModule } from 'primeng/togglebutton';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,10 +13,13 @@ import { TicketPageComponent } from './ticket-page.component';
   ],
   imports: [
     CommonModule,
-    TicketPageRoutingModule
+    TicketPageRoutingModule,
+    ToggleButtonModule,
+    ReactiveFormsModule,
   ],
   exports: [
     TicketPageComponent
   ]
 })
-export class TicketPageModule { }
+export class TicketPageModule {
+}
