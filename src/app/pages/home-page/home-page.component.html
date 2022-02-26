@@ -1,10 +1,20 @@
 <h2>Tickets</h2>
 
-<form [formGroup]="formGroup">
-  <ul formArrayName="tickets">
-    <li *ngFor="let t of tickets|async; let i = index" [formGroupName]="i">
-      <p-toggleButton formControlName="completed" onIcon="pi pi-check" offIcon="pi pi-times"></p-toggleButton>
-      {{t.description}}
-    </li>
-  </ul>
-</form>
+<!--<button>Add ticket</button>-->
+
+<p-table [value]="tickets|async" responsiveLayout="scroll" [formGroup]="formGroup">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Ticket Description</th>
+      <th>Assignee</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-ticket let-i="rowIndex" formArrayName="tickets">
+    <tr [formGroupName]="i">
+      <td>
+        <p-toggleButton formControlName="completed" onIcon="pi pi-check" offIcon="pi pi-times"></p-toggleButton>
+        <p [routerLink]="['/', 'tickets', ticket.id]">{{ticket.description}}</p>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

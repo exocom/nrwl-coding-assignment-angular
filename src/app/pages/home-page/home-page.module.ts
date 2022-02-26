@@ -5,6 +5,7 @@ import { HomePageRoutingModule } from './home-page-routing.module';
 import { HomePageComponent } from './home-page.component';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TableModule } from 'primeng/table';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     HomePageRoutingModule,
     ToggleButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TableModule,
   ],
   exports: [
     HomePageComponent
