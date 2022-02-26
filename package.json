@@ -21,7 +21,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "generate:page": "bash ./scripts/pages.sh"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.2",
