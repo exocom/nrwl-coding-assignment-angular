@@ -11,9 +11,9 @@
   </ng-template>
   <ng-template pTemplate="body" let-ticket let-i="rowIndex" formArrayName="tickets">
     <tr [formGroupName]="i">
-      <td>
+      <td class="flex align-items-center">
         <p-toggleButton formControlName="completed" onIcon="pi pi-check" offIcon="pi pi-times"></p-toggleButton>
-        <p [routerLink]="['/', 'tickets', ticket.id]">{{ticket.description}}</p>
+        <p class="ml-3 cursor-pointer" [routerLink]="['/', 'tickets', ticket.id]">{{ticket.description}}</p>
       </td>
     </tr>
   </ng-template>
