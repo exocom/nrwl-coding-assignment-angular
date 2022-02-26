@@ -1,30 +1,30 @@
-import {TestBed, waitForAsync} from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
 import {BackendService} from "./services/backend.service";
+import {HomePageComponent} from "./pages/home-page/home-page.component";
 
 describe('AppComponent', () => {
-    beforeEach(waitForAsync(() => {
-        TestBed.configureTestingModule({
-            declarations: [
-                AppComponent
-            ],
+    let component: AppComponent;
+    let fixture: ComponentFixture<AppComponent>;
+
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [HomePageComponent],
             providers: [
                 {provide: BackendService, useValue: new BackendService()}
             ]
+        })
+            .compileComponents();
+    });
 
-        }).compileComponents();
-    }));
-
-    it('should create the app', (() => {
-        const fixture = TestBed.createComponent(AppComponent);
-        const app = fixture.debugElement.componentInstance;
-        expect(app).toBeTruthy();
-    }));
-
-    it('should render title in a h1 tag', (() => {
-        const fixture = TestBed.createComponent(AppComponent);
+    beforeEach(() => {
+        fixture = TestBed.createComponent(AppComponent);
+        component = fixture.debugElement.componentInstance;
         fixture.detectChanges();
-        const compiled = fixture.debugElement.nativeElement;
-        expect(compiled.querySelector('h2').textContent).toContain('Tickets');
-    }));
+    });
+
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
+
 });

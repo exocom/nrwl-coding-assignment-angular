@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { BackendService } from '../../services/backend.service';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent {
+  tickets = this.backend.tickets();
+  users = this.backend.users();
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private backend: BackendService) {
   }
-
 }

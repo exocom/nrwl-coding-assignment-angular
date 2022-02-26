@@ -1,1 +1,7 @@
-<p>home-page works!</p>
+<h2>Tickets</h2>
+
+<ul>
+    <li *ngFor="let t of tickets|async">
+        Ticket: {{t.id}}, {{t.description}}
+    </li>
+</ul>

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomePageComponent } from './home-page.component';
+import {BackendService} from "../../services/backend.service";
 
 describe('HomePageComponent', () => {
   let component: HomePageComponent;
@@ -8,7 +9,10 @@ describe('HomePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomePageComponent ]
+      declarations: [ HomePageComponent ],
+      providers: [
+        {provide: BackendService, useValue: new BackendService()}
+      ]
     })
     .compileComponents();
   });
@@ -22,4 +26,9 @@ describe('HomePageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render title in a h1 tag', (() => {
+      const compiled = fixture.debugElement.nativeElement;
+      expect(compiled.querySelector('h2').textContent).toContain('Tickets');
+  }));
 });
