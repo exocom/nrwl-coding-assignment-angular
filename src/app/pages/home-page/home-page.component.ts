@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BackendService } from '../../services/backend.service';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home-page',
@@ -8,13 +9,22 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent {
-  tickets = this.backend.tickets();
+  tickets = this.backend.tickets().pipe(
+    tap(tickets => {
+      this.ticketsFormArray.clear();
+      tickets
+        .map(t => this.fb.group({
+          id: [t.id, Validators.required],
+          description: [t.description, Validators.required],
+          assigneeId: [t.assigneeId],
+          completed: [t.completed]
+        }))
+        .forEach(fg => this.ticketsFormArray.push(fg));
+    })
+  );
   users = this.backend.users();
 
-  ticketsFormArray = this.fb.array([
-    this.fb.group({isComplete: false}),
-    this.fb.group({isComplete: true}),
-  ]);
+  ticketsFormArray = this.fb.array([]);
   formGroup = this.fb.group({
     tickets: this.ticketsFormArray,
   })

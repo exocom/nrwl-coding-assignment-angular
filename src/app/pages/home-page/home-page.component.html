@@ -3,9 +3,8 @@
 <form [formGroup]="formGroup">
   <ul formArrayName="tickets">
     <li *ngFor="let t of tickets|async; let i = index" [formGroupName]="i">
-      <p-toggleButton formControlName="isComplete" onIcon="pi pi-check" offIcon="pi pi-times"></p-toggleButton>
-
-      Ticket: {{t.id}}, {{t.description}}
+      <p-toggleButton formControlName="completed" onIcon="pi pi-check" offIcon="pi pi-times"></p-toggleButton>
+      {{t.description}}
     </li>
   </ul>
 </form>
