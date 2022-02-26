@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { BackendService } from '../../services/backend.service';
 import { FormBuilder, Validators } from '@angular/forms';
-import { tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-home-page',
@@ -23,6 +24,14 @@ export class HomePageComponent {
     })
   );
   users = this.backend.users();
+
+  ticketsWithUsers = combineLatest([this.tickets, this.users]).pipe(
+    map(([tickets, users]) => {
+      return tickets.map(t => {
+        return {...t, assignee: users.find(({id}) => t.assigneeId === id)};
+      })
+    })
+  )
 
   ticketsFormArray = this.fb.array([]);
   formGroup = this.fb.group({
