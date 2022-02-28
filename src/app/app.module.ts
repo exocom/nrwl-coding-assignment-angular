@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { BackendService } from './services/backend.service';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    StoreModule.forRoot({}),
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
