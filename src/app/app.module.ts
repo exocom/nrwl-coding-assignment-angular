@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import * as fromUser from './+state/user/user.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { UserEffects } from './+state/user/user.effects';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
       logOnly: false,
       autoPause: false,
     }),
+    StoreModule.forFeature(fromUser.userFeatureKey, fromUser.reducer),
+    EffectsModule.forFeature([UserEffects]),
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
