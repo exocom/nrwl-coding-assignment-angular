@@ -9,6 +9,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import * as fromUser from './+state/user/user.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './+state/user/user.effects';
+import * as fromTicket from './+state/ticket/ticket.reducer';
+import { TicketEffects } from './+state/ticket/ticket.effects';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { UserEffects } from './+state/user/user.effects';
       autoPause: false,
     }),
     StoreModule.forFeature(fromUser.userFeatureKey, fromUser.reducer),
-    EffectsModule.forFeature([UserEffects]),
+    StoreModule.forFeature(fromTicket.ticketFeatureKey, fromTicket.reducer),
+    EffectsModule.forFeature([UserEffects, TicketEffects]),
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
