@@ -11,6 +11,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './+state/user/user.effects';
 import * as fromTicket from './+state/ticket/ticket.reducer';
 import { TicketEffects } from './+state/ticket/ticket.effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { TicketEffects } from './+state/ticket/ticket.effects';
     StoreModule.forFeature(fromUser.userFeatureKey, fromUser.reducer),
     StoreModule.forFeature(fromTicket.ticketFeatureKey, fromTicket.reducer),
     EffectsModule.forFeature([UserEffects, TicketEffects]),
+    StoreRouterConnectingModule.forRoot(),
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
